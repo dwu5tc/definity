@@ -1,0 +1,53 @@
+@mixin percentageWidth($a, $b) {
+	width: calc((#{$a} / #{$b}) * 100%);
+}
+
+@mixin pW($a, $b) {
+	@include percentageWidth($a, $b);
+}
+
+@mixin percentageWidthInverse($a, $b) {
+	width: calc((#{$b} - #{$a}) / #{$b} * 100%);
+}
+
+@mixin pWI($a, $b) {
+	@include percentageWidthInverse($a, $b);
+}
+
+@mixin widthCalcWithMargin($containerWidth, $colNum, $marginVal) {
+	width: calc((#{$containerWidth} - (( #{$colNum} - 1 ) * #{$marginVal})) / #{$colNum} / (#{$containerWidth}) * 100% );
+}
+
+@mixin wCWM($a, $b, $c) {
+	@include widthCalcWithMargin(#{$a}, #{$b}, #{$c});
+}
+
+@mixin percentagePadding($a, $b, $c, $d, $e) {
+	padding-top: calc(#{$a} / #{$e} * 100%);
+	padding-right: calc(#{$b} / #{$e} * 100%);
+	padding-bottom: calc(#{$c} / #{$e} * 100%);
+	padding-left: calc(#{$d} / #{$e} * 100%);
+}
+
+@mixin pP($a, $b, $c, $d, $e) {
+	@include percentagePadding($a, $b, $c, $d, $e);
+}
+
+@mixin aspectRatio($w, $h, $c) {
+	position: relative;
+	width: calc(#{$w} / #{$c} * 100%);
+	padding-top: calc(#{$h} / #{$w} * (#{$w} / #{$c}) * 100%);
+	.content {
+		position: absolute;
+		width: 100%;
+		top: 0; bottom: 0;
+		overflow: hidden;
+	}
+	img { 
+		max-width: 100%;
+	}
+}
+
+@mixin aR($w, $h, $c) {
+	@include aspectRatio($w, $h, $c);
+}

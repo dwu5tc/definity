@@ -1,0 +1,105 @@
+.contact-top {
+	background: url(../images/map.jpg);
+	background-size: cover;
+	background-position: center center;
+	@include pP(75, 325, 75, 325, 1400);
+	@media (max-width: 940px) {
+		@include pP(75, 250, 75, 250, 1400);
+	}
+	__area {
+		background-color: #fff;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		@include pP(68, 98, 68, 98, 750);
+		> * {
+			width: 50%;
+			margin-bottom: calc(40 / 750 * 100%);
+			@media (max-width: 1285px) {
+			}
+			@media (max-width: 780px) {
+				width: 100%;
+			}
+			@media (max-width: 480px) {
+			}
+			span:nth-of-type(1) {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 12.8px;
+				letter-spacing: 2px;
+				color: #111111;
+			}
+			span:nth-of-type(2) {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 12px;
+				font-weight: 300;
+				letter-spacing: 2.4px;
+				color: #777777;
+			}
+			i {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.contact-form {
+	@include pP(100, 325, 100, 325, 1400);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	margin: 0 auto;
+	@media (max-width: 1285px) {
+		@include pP(100, 250, 100, 250, 1400);
+	}
+	&__left,
+	&__right {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		width: 50%;
+		height: 133px;
+		margin: 0;
+		@media (max-width: 940px) {
+			width: 100%;
+		}	
+		span {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12.8px;
+			line-height: 1.6;
+			letter-spacing: 2px;
+			color: #111111;
+		}
+		input,
+		textarea {
+			width: 100%;
+		}
+	}
+	&__left {
+		padding-right: 10px;
+		@media (max-width: 940px) {
+			padding-right: 0px;
+		}	
+		&__name,
+		&__email {
+			padding-top: 8px;
+			padding-left: 8px;
+			padding-bottom: 8px;
+			margin-bottom: 5px;
+		}
+	}
+	&__right {
+		padding-left: 10px;
+		@media (max-width: 940px) {
+			padding-left: 0px;
+		}	
+		&__textarea {
+			padding-top: 8px;
+			padding-left: 8px;
+			padding-bottom: 60px;
+			margin-bottom: 5px;
+		}
+	}
+	button {
+		margin-top: 20px;
+	}
+}

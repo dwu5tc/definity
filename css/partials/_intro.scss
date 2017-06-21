@@ -1,0 +1,87 @@
+.intro .wrapper {
+	background-color: $ltBgColor;
+}
+
+.intro .section-content {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	@media (max-width: 1285px) {
+		justify-content: space-around;
+	}
+	@media (max-width: 780px) {
+		flex-flow: column nowrap;
+		align-items: center;
+	}
+}
+
+.intro-item {
+	display: flex;
+	flex-direction: row;
+	// @include pW(554, 1140);
+	@include wCWM(1140, 2, 32);
+	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.15);
+	margin-bottom: 32px;
+	@media (max-width: 1285px) {
+		min-width: 275px;
+		@include wCWM(977, 2, 320);
+		flex-direction: column;
+	}
+	@media (max-width: 780px) {
+		width: 275px;
+	}
+
+	&__image {
+		@include aR(240, 254, 544);
+		@media (max-width: 1285px) {
+			@include aR(240, 180, 240);
+		}
+	}
+	&__content {
+		@include pWI(240, 544);
+		display: flex;
+		flex-direction: column;
+		padding: calc(30 / 544 * 100%);
+		background-color: #fff;
+		@media (max-width: 1285px) {
+			@include pW(240, 240);
+			padding: 25px;
+		}
+	}
+	h3 {
+		margin-bottom: calc(18 / 240 * 100%);
+	}
+	p {
+		margin-bottom: calc(32 / 240 * 100%);
+	}
+	button {
+		margin: 0;
+		padding: 0;
+		align-self: flex-end;
+	}
+	img {
+		max-width: 110%;
+		@media (max-width: 1285px) {
+			max-width: 100%;
+		}
+	}
+	&:nth-of-type(1) img,
+	&:nth-of-type(2) img {
+		max-width: 165%;
+		@media (max-width: 1285px) {
+			max-width: 120%;
+		}
+	}
+	&:nth-of-type(1) img, {
+		transform: translate(-20%, 0%);
+		@media (max-width: 1285px) {
+			transform: translate(-10%, 0%);
+		}
+	}
+	&:nth-of-type(2) img {
+		transform: translate(-20%, 0%);
+		@media (max-width: 1285px) {
+			transform: translate(-10%, 0%);
+		}
+	}
+}

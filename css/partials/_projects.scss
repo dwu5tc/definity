@@ -1,0 +1,82 @@
+.projects-menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	li {
+		padding: 5px 15px;
+		&:hover {
+			background-color: #000;
+		}
+		a {
+			font-family: 'Open Sans', sans-serif;
+			display: block;
+			font-size: 10.6px;
+			font-weight: 300;
+			line-height: 2;
+			letter-spacing: 2.1px;
+			text-align: left;
+			color: #999999;
+		}
+	}
+}
+
+.projects-gallery {
+	width: 100%;
+	padding-top: percentage(55 / 1140);
+	padding-bottom: percentage(55 / 1140);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	&__image {
+		@include aR(380, 247, 1140);
+		@media (max-width: 940px) {
+			@include aR(380, 247, 765);
+		}	
+		@media (max-width: 780px) {
+			@include aR(380, 247, 525);
+		}
+		a {
+			position: absolute;
+			top: 0; right: 0;
+			bottom: 0; left: 0;
+			background-color: transparent;
+			z-index: 10;
+		}
+		&:hover .dummy-hover {
+			opacity: 1;
+		}
+		&:hover .dummy-over .text {
+
+		}
+		.dummy-hover {
+			position: absolute;
+			top: 0; right: 0;
+			bottom: 0; left: 0;
+			background-color: rgba(17, 17, 17, 0.7);
+			opacity: 0;
+			.text {
+				position: absolute;
+				bottom: calc(30 / 247 * 100%);
+				left: calc(30 / 380 * 100%);
+			}
+			.text span:nth-of-type(1) {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 15.9px;
+				letter-spacing: 2.5px;
+				color: #ececec;
+				margin-bottom: 20px;
+			}
+			.text span:nth-of-type(2) {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 12px;
+				letter-spacing: 2.5px;
+				color: #999999;
+			}
+		}
+	}
+	img { /* 6th image not cropped properly; this fixes it */
+		max-width: 102%;
+		transform: translate(-1%, -1%);
+	}
+}
+

@@ -1,0 +1,63 @@
+.patterned-block {
+	display: flex;
+	justify-content: center;
+	font-family: 'Open Sans', sans-serif;
+	.wrapper {
+		background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(../images/geometric_bg.jpg);
+		background-size: cover;
+		background-position: center center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		> span {
+			font-size: 15.9px;
+			font-weight: 300;
+			line-height: 1.33;
+			letter-spacing: 6.4px;
+			text-align: left;
+			color: #ececec;
+		}
+		> button {
+			margin-bottom: 100px;
+		}
+	}
+}
+
+.inquire {
+	.wrapper {
+		> span {
+			margin-top: 99px;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.join-us {
+	.wrapper > span {
+		margin-top: 152px;
+	}
+	form {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		input[type=text] {
+			@include pW(555, 1400);
+			background-color: transparent;
+			margin-top: 79px;
+			margin-bottom: 50px;
+			padding: 20px 0px 20px 0px;
+			border: none;
+			border-bottom: 1px solid #777777;
+			font-size: 39.9px;
+			line-height: 0.18;
+			letter-spacing: 1px;
+			text-align: center;
+			color: rgba(236, 236, 236, 0.1);
+			transition: 0.5s;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
