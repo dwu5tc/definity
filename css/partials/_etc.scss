@@ -1,11 +1,12 @@
 .patterned-block {
+	background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(../images/geometric_bg.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 	display: flex;
 	justify-content: center;
 	font-family: 'Open Sans', sans-serif;
 	.wrapper {
-		background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(../images/geometric_bg.jpg);
-		background-size: cover;
-		background-position: center center;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -17,6 +18,7 @@
 			letter-spacing: 6.4px;
 			text-align: left;
 			color: #ececec;
+			text-align: center;
 		}
 		> button {
 			margin-bottom: 100px;
@@ -44,19 +46,24 @@
 		input[type=text] {
 			@include pW(555, 1400);
 			background-color: transparent;
-			margin-top: 79px;
+			margin-top: 70px;
+			text-transform: none;
 			margin-bottom: 50px;
-			padding: 20px 0px 20px 0px;
+			padding: 20px 0px 10px 0px;
 			border: none;
 			border-bottom: 1px solid #777777;
-			font-size: 39.9px;
+			font-size: 24px;
 			line-height: 0.18;
 			letter-spacing: 1px;
 			text-align: center;
 			color: rgba(236, 236, 236, 0.1);
-			transition: 0.5s;
+			transition: all 0.5s ease-in-out;
 			&:focus {
 				outline: none;
+			}
+			@media (max-width: 780px) {
+				font-size: 18px;
+				width: 70%;
 			}
 		}
 	}

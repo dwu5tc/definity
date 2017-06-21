@@ -1,33 +1,22 @@
+.work {
+	background-color: #fff;
+}
+
 .work .section-title {
-	background-color: #f4f4f4;
 	margin-bottom: calc(93 / 1400 * 100%);
 }
 
 .work-top {
-	background-color: #fff;
 	display: flex;
 	margin: 0 auto;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	@media (max-width: 1285px) {
-		justify-content: space-around;
-	}
-	@media (max-width: 940px) {
-		padding-top: 40px;
-	}
 	.work-item {
 		position: relative;
 		width: 30%;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-		@media (max-width: 1285px) {
-			width: 28%;
-		}
-		@media (max-width: 940px) {
-			width: 80%;
-			margin-bottom: 80px;
-		}
 		&__bg-number {
 			position: absolute;
 			top: 0; left: 0;
@@ -35,22 +24,39 @@
 			font-family: 'Open Sans', sans-serif;
 			font-size: 168px;
 			font-weight: 300;
-			color: rgba(204, 204, 204, 0.4);
+			color: rgba(204, 204, 204, 0.2);
 			@media (max-width: 940px) {
 				font-size: 135px;
 				transform: translate(-30%, -40%);
 			}
+			@media (max-width: 540px) {
+				font-size: 100px;
+				transform: translate(-25%, -50%);
+			}
 		}
 		&__content {
 			@include pW(242, 334);
-			@media (max-width: 1285px) {
-				width: 100%;
-			}
 			align-self: flex-end;
 			h4 {
 				margin-bottom: 28px;
 			}
+			@media (max-width: 1285px) {
+				width: 100%;
+			}
 		}
+		@media (max-width: 1285px) {
+			width: 28%;
+		}
+		@media (max-width: 940px) {
+			width: 80%;
+			margin-bottom: 80px;
+		}
+	}
+	@media (max-width: 1285px) {
+		justify-content: space-around;
+	}
+	@media (max-width: 940px) {
+		padding-top: 40px;
 	}
 }
 
@@ -76,14 +82,6 @@
 
 .work-menu {
 	@include pW(423, 1400);
-	@media (max-width: 1285px) {
-		flex-basis: calc(423 / 1400 * 1285px);
-		flex-shrink: 1;
-	}
-	@media (max-width: 940px) {
-		width: calc(1140 / 1400 * 100%);
-		flex: none;
-	}
 	&-item {
 		background-color: #ffffff;
 		border: 1px solid #f4f4f4;
@@ -92,7 +90,7 @@
 		align-items: center;
 		height: 149px;
 		a:hover {
-			color: inherit; /*!!! wtf !!!*/
+			color: inherit;
 		}
 		&__icon {
 			@include pW(117, 423);
@@ -107,6 +105,14 @@
 			flex-flow: column wrap;
 			justify-content: center;
 		}
+	}
+	@media (max-width: 1285px) {
+		flex-basis: calc(423 / 1400 * 1285px);
+		flex-shrink: 1;
+	}
+	@media (max-width: 940px) {
+		width: 100%;
+		flex: none;
 	}
 }
 
@@ -135,11 +141,9 @@
 	@media (max-width: 940px) {
 		width: calc(1140 / 1400 * 100%);
 		flex: none;
-	}	
+	}
 	@media (max-width: 780px) {
 		flex-wrap: wrap;
-	}
-	@media (max-width: 480px) {
 	}
 	&__content {
 		@include pWI(492, 977);
@@ -172,6 +176,9 @@
 		@include pW(492, 977)
 		display: flex;
 		align-items: center;
+		img {
+			max-width: 100%;
+		}
 		@media (max-width: 1285px) {
 			flex-basis: calc(450 / 977 * (977 / 1400 * 1285));
 			flex-shrink: 2;
@@ -188,43 +195,48 @@
 				margin-bottom: 10%;
 			}
 		}
-		img {
-			max-width: 100%;
+		@media (max-width: 540px) {
+			img {
+				min-width: 0;
+			}
 		}
 	}
 }
 
 .work-bottom {
-	background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(../images/progress_bg.jpg);
+	background: linear-gradient(rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../images/progress_bg.jpg);
+	background-attachment: fixed;
 	background-size: cover;
 	background-position: center center;
+}
+
+.work-bottom .wrapper {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
-	padding-top: calc(70 / 1400 * 100%);
-	padding-bottom: calc(65 / 1400 * 100%);
+	padding: 70px 0px 70px 0px;
 	text-align: center;
-	@media (max-width: 940px) {
-		margin-top: 70px;
-		margin-bottom: 65px;
-		justify-content: center;
-	}
-	&-item {
-		width: 25%;
-		@media (max-width: 940px) {
-			width: 45%;
-			padding: calc(30 / 940 * 100%);
-		}
-	}
+}
+
+.work-bottom-item {
+	width: 25%;
 	.container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 20px;
 	}
-	&-item:nth-of-type(3) img{
+	&:nth-of-type(3) img {
 		transform: translateX(5px);
+	}
+	@media (max-width: 940px) {
+		width: 50%;
+		margin: 30px 0px 30px 0px;
+		justify-content: center;
+	}
+	@media (max-width: 480px) {
+		display: none;
 	}
 }
 
